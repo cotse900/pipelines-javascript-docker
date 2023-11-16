@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: cotsepipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cotsepipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: cotsepipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: cotsepipelinesjavascriptdocker 
+          image: cotsea2.azurecr.io/cotsepipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
